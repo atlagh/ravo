@@ -1,0 +1,27 @@
+.headline-container{
+    
+    width: 100%;
+    height: 800px;
+
+
+}
+
+.particles{
+    width: 100%;
+    height: 800px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+
+}
+
+.headline-paragraph{
+    color: white;
+    font-size: 70px;
+    margin-top: 500px;
+    margin-left: 100px;
+}
+
