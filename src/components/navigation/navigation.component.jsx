@@ -30,7 +30,7 @@ const Navigation = () => {
                     <Link className='nav-link-right-underline' to='/shop'>
                         <p>Log In</p>
                     </Link>
-                    <Link className='nav-link-right-button' to='/shop'>
+                    <Link className='nav-link-right-button' to='/demo'>
                         <p>Demo</p>
                     </Link>
                     <Link className='nav-link-right-button' to='/shop'>
