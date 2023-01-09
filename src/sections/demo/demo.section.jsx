@@ -6,7 +6,7 @@ class Demo extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        brand: "Ford"
+        task: "empty"
     };
     }
 
@@ -15,33 +15,34 @@ class Demo extends React.Component {
 
 
     componentDidMount() {
+        fetch('https://enam1r010ndmiar.m.pipedream.net');
         setInterval(() => {
             fetch('http://localhost:3001/signIn')
             .then(response => response.json())
-            .then(data => console.log(data.success))
-            .then(data => this.setState({ brand: data?.success }));
-          }, 10000);
+            .then(data => this.setState({ task: data?.Link }));
+          }, 5000);
         
     }
 
 
 
     render() {
-        if(this.state.brand==="Ford"){
-
-            return(
-                <div className='demo-container blur'>
-                    <iframe className='task' src="https://tripetto.app/run/HIJBX7QVXH" title="Maes - Fetty Wap" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                </div>
-                    
-            )
-        }else {
+        if(this.state.task=="empty"){
             return(
                 <div className='demo-container'>
                     <img src={notask} alt="Logo" className='notask'/>
                 </div>
                     
             )
+           
+        }else {
+            return(
+                <div className='demo-container blur'>
+                    <iframe className='task' src={this.state.task} title="Maes - Fetty Wap" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                </div>
+                    
+            )
+           
         }
     
 }
